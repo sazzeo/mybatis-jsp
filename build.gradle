@@ -43,6 +43,9 @@ dependencies {
     //oracle
     runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
 
+    //새로고침시 jsp 자동반영 옵션
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
 }
 
 //테스트 파일 빌드에서 제외

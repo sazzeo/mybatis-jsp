@@ -10,3 +10,9 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:XE
     username: system
     password: oracle
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: false
