@@ -22,16 +22,32 @@ repositories {
 }
 
 dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    
+    //롬복
     compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
     annotationProcessor 'org.projectlombok:lombok'
+    
+    //테스트
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    //jsp 설정
     implementation 'javax.servlet:jstl'
     implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.2'
 
+    //mybatis
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
+    //oracle
+    runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+
+}
+
+//테스트 파일 빌드에서 제외
+test {
+//    exclude '**/*'
 }
 
 tasks.named('test') {
