@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.minhee.springbootstudy.board.dao.BoardDao">
+
+    <insert id="insertBoard">
+        insert into board(BOARD_SEQ,
+                          USER_SEQ,
+                          TITLE,
+                          CONTENTS,
+                          CREATE_DATE)
+        values (SEQ_BOARD.NEXTVAL,
+                #{userSeq},
+                #{title},
+                #{contents},
+                #{createDate})
+    </insert>
+
+    <select id="select" resultType="boardResponseDto">
+        select * from
+        board
+        <where>
+            and board_seq = #{boardSeq}
+        </where>
+
+
+    </select>
+
+</mapper>
